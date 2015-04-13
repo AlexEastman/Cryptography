@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.params=publicKey
+comment0.target=Encrypter(int)
+comment1.params=message
+comment1.target=java.lang.String\ EncryptString(java.lang.String)
+comment2.params=message
+comment2.target=int\ EncryptNumber(int)
+comment3.params=
+comment3.target=int\ getPrivateKey()
+comment4.params=message
+comment4.target=java.lang.String\ DecryptString(java.lang.String)
+comment5.params=message\ privateKey
+comment5.target=java.lang.String\ DecryptString(java.lang.String,\ int)
+comment6.params=message
+comment6.target=int\ DecryptNumber(int)
+comment7.params=message\ privateKey
+comment7.target=int\ DecryptNumber(int,\ int)
+numComments=8
