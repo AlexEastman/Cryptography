@@ -1,5 +1,5 @@
 
-public class Encrypter
+public abstract class Encrypter
 {
     
     private int key;
@@ -9,40 +9,20 @@ public class Encrypter
         key = publicKey;
     }
     
-    public String EncryptString(String message)
-    {
-        return message;
-    }
+    public abstract String EncryptString(String message);
+       
+    public abstract int EncryptNumber(int message);
     
-    public int EncryptNumber(int message)
-    {
-        return message;
-    }
-
-    public int getPrivateKey()//determines private key value
-    {
-        return key;
-    }
+    public abstract int getPrivateKey();//determines private key value
+   
+    public abstract String DecryptString(String message);
+       
+    public abstract String DecryptString(String message, int privateKey);
+      
+    public abstract int DecryptNumber(int message);
+   
+    public abstract int DecryptNumber(int message, int privateKey);
     
-    public String DecryptString(String message)
-    {
-        return message;
-    }
-    
-    public String DecryptString(String message, int privateKey)
-    {
-        return message;
-    }
-    
-    public int DecryptNumber(int message)
-    {
-        return message;
-    }
-    
-    public int DecryptNumber(int message, int privateKey)
-    {
-        return message;
-    }
     
     
 }
