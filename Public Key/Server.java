@@ -5,13 +5,12 @@ public class Server
     private int privateKey;
     private int publicKey;
     private KeyGenerator keyGen;
-    
-    
-    
+    private Encrypter encrypt;
     
     public Server(int seedSize)
     {
-        keyGen = new KeyGenerator();
+        //keyGen = new KeyGenerator();
+        //encrypt = new Encrypter(publicKey);
         
         privateKey = keyGen.generatePrivateKey(makeRandomSeed(seedSize)); // makes a unique private key
         publicKey = keyGen.generatePublicKey(privateKey);
@@ -30,8 +29,7 @@ public class Server
     
     public void recieveMessage(String encryptedMessage)
     {
-        Encryper encrypt = new Encrypter(publicKey);
-        
+                
         String message = encrypt.decryptString(encryptedMessage,privateKey);
         System.out.println("served recieved the following message: " + message);
         

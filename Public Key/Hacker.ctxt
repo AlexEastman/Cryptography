@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Hacker()
+comment1.params=encryptedMessage
+comment1.target=void\ recieveMessage(java.lang.String)
+comment2.params=key
+comment2.target=void\ setPublicKey(int)
+numComments=3

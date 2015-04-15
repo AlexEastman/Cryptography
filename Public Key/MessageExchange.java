@@ -15,7 +15,15 @@ public class MessageExchange
         Client client = new Client(); // the client
         Hacker hacker = new Hacker(); // and the hacker
         
+        int publicKey = server.getPublicKey();
+        client.setPublicKey(publicKey);
         
+        client.makeNewMessage();
+        String encryptedMessage = client.getEncryptedMessage();
+        System.out.println("message encrypted as:" + encryptedMessage);
+        
+        server.recieveMessage(encryptedMessage);
+        hacker.recieveMessage(encryptedMessage);
     }
 
     

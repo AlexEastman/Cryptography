@@ -1,40 +1,33 @@
-
-
-/**
- * Write a description of class Client here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+import java.util.Scanner;
 public class Client
 {
     /** description of instance variable x (add comment for each instance variable) */
-    private int x;
-
-    /**
-     * Default constructor for objects of class Client
-     */
+    private Encrypter encrypt;
+    private String message;
+    private int publicKey;
+    
+    
     public Client()
     {
-        // initialise instance variables
-        x = 0;
+        
+    }
+    
+    public void setPublicKey(int key)
+    {
+        publicKey = key;
+        //encrypt = new Encrypter(key);
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *    that describes the operation of the method
-     *
-     * @pre        preconditions for the method
-     *            (what the method assumes about the method's parameters and class's state)
-     * @post    postconditions for the method
-     *            (what the method guarantees upon completion)
-     * @param    y    description of parameter y
-     * @return    description of the return value
-     */
-    public int sampleMethod(int y)
+    public void makeNewMessage()
     {
-        // put your code here
-        return x+y;
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter message for server");
+        message = in.next();
+    }
+    
+    public String getEncryptedMessage()
+    {
+        return encrypt.encryptString(message);
     }
 
 }

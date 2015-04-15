@@ -15,8 +15,11 @@ public abstract class Encrypter
     
     public abstract int getPrivateKey();//determines private key value
    
-    public abstract String decryptString(String message); 
-    //calculates private key then decrypts
+    public String decryptString(String message) //calculates private key then decrypts
+    {
+        return decryptString(message,getPrivateKey());
+    }
+    
        
     public abstract String decryptString(String message, int privateKey); 
     //decrypts based off given private key 
