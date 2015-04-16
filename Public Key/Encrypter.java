@@ -20,6 +20,10 @@ public abstract class Encrypter
         return decryptString(message,getPrivateKey());
     }
     
+    public int getPublicKey()
+    {
+        return key;
+    }
        
     public abstract String decryptString(String message, int privateKey); 
     //decrypts based off given private key 

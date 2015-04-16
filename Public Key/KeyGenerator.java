@@ -7,8 +7,8 @@ public abstract class KeyGenerator
         
     }
     
-    public abstract int generatePrivateKey(int seed);
+    public abstract int[] generatePrivateKey(int seed);
     
-    public abstract int generatePublicKey(int privateKey);
+    public abstract int[] generatePublicKey(int privateKey);
        
 }
