@@ -11,9 +11,9 @@ public class Server
     {
         //keyGen = new KeyGenerator();
         //encrypt = new Encrypter(publicKey);
-        
-        privateKey = keyGen.generatePrivateKey(makeRandomSeed(seedSize)); // makes a unique private key
-        publicKey = keyGen.generatePublicKey(privateKey);
+        int[] keys = keyGen.generateKeys(makeRandomSeed(seedSize));
+        privateKey = keys[0]; // makes a unique private key
+        publicKey = keys[1];
         
     }
     

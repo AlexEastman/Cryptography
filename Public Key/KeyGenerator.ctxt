@@ -2,7 +2,5 @@
 comment0.params=
 comment0.target=KeyGenerator()
 comment1.params=seed
-comment1.target=int\ generatePrivateKey(int)
-comment2.params=privateKey
-comment2.target=int\ generatePublicKey(int)
-numComments=3
+comment1.target=int[][]\ generateKeys(int)
+numComments=2

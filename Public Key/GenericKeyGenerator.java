@@ -14,13 +14,11 @@ public class GenericKeyGenerator extends KeyGenerator
         
     }
 
-    public int generatePrivateKey(int seed)
+    public int[][] generateKeys(int seed)
     {
-        return seed;
+        int[][] keys = {{seed},{seed}};
+        return keys;
     }
     
-    public int generatePublicKey(int privateKey)
-    {
-        return privateKey;
-    }
+  
 }
