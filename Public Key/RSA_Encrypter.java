@@ -17,6 +17,31 @@ public class RSA_Encrypter extends Encrypter
         super(publicKey);
     }
 
+    /**
+     * method written by Bruce Schneier
+     *
+     * @pre     (m-1)^2 does not overflow , b,e, and m are all positive integers
+     * @post    will return c | c≡b^e(mod(m)) 
+     * @param   y   description of parameter y
+     * @return  description of the return value
+     */
+    public static int modular_pow(int b, int e, int m)
+    {
+        int result = 1;
+        b = (b%m);
+        while (e>0)
+        {
+            if(e%2==1)
+            {
+                result = (result*b)%m;
+            }
+            e = e>>1;
+            b = (b*b)%m;
+            
+        }
+        return result;
+    }
+
     
 
 }
