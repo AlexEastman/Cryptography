@@ -22,10 +22,10 @@ public class RSA_Encrypter extends Encrypter
      *
      * @pre     (m-1)^2 does not overflow , b,e, and m are all positive integers
      * @post    will return c | c≡b^e(mod(m)) 
-     * @param   y   description of parameter y
+     * @param   b: base of an exponent, e: exponent, m: modulus
      * @return  description of the return value
      */
-    public static int modular_pow(int b, int e, int m)
+    private int modular_pow(int b, int e, int m)
     {
         int result = 1;
         b = (b%m);
@@ -42,6 +42,10 @@ public class RSA_Encrypter extends Encrypter
         return result;
     }
 
-    
+    public String encryptString(String message)
+    {
+        byte[] bytes = message.getBytes();
+        
+    }
 
 }

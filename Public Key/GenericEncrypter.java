@@ -1,5 +1,4 @@
-
-
+import java.math.BigInteger;
 /**
  * Write a description of class GenericEncrypter here.
  * 
@@ -12,7 +11,7 @@ public class GenericEncrypter extends Encrypter
     /**
      * Default constructor for objects of class GenericEncrypter
      */
-    public GenericEncrypter(int publicKey)
+    public GenericEncrypter(int[] publicKey)
     {
         super(publicKey);
     }
@@ -22,27 +21,27 @@ public class GenericEncrypter extends Encrypter
         return message;
     }
        
-    public int encryptNumber(int message) //encrypts an int
+    public BigInteger encryptNumber( BigInteger message) //encrypts an int
     {
         return message;
     }
     
-    public int getPrivateKey()//determines private key value
+    public int[] getPrivateKey()//determines private key value
     {
         return super.getPublicKey();
     }
    
-    public String decryptString(String message, int privateKey)
+    public String decryptString(String message, int[] privateKey)
     {
         return message;
     }
    
-    public int decryptNumber(int message)
+    public BigInteger decryptNumber(BigInteger message)
     {
         return message;
     }
    
-    public int decryptNumber(int message, int privateKey)
+    public BigInteger decryptNumber(BigInteger message, int[] privateKey)
     {
         return message;
     }
