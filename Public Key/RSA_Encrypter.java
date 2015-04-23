@@ -1,5 +1,4 @@
-
-
+import java.math.BigInteger;
 /**
  * Write a description of class RSA_Encrypter here.
  * 
@@ -12,7 +11,7 @@ public class RSA_Encrypter extends Encrypter
     /**
      * Default constructor for objects of class RSA_Encrypter
      */
-    public RSA_Encrypter(int publicKey)
+    public RSA_Encrypter(int[] publicKey)
     {
         super(publicKey);
     }
@@ -45,7 +44,16 @@ public class RSA_Encrypter extends Encrypter
     public String encryptString(String message)
     {
         byte[] bytes = message.getBytes();
-        
+        BigInteger integer = new BigInteger(bytes);
+        BigInteger encrypt = encryptNumber(integer);
+        encryptedBytes = encrypt.toByteArray();
+        String encryptedMessage = new String(encryptedBytes);
     }
 
+    public BigInteger encryptNumber(BigInteger message)
+    {
+        long modulus = getPublicKey()[0];
+        long exponent = getPublicKey()[1];
+        return message.modPow(BigInteger.valueOf(exponent),BigInteger.valueOf(modulus));
+    }
 }

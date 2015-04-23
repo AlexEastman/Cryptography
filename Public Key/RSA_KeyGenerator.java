@@ -1,6 +1,4 @@
-
-
-
+import java.math.BigInteger;
 public class RSA_KeyGenerator extends KeyGenerator
 {
     public int[][] generateKeys(int seed)
@@ -21,9 +19,9 @@ public class RSA_KeyGenerator extends KeyGenerator
         }
         int n = p*q;
         int t = (p-1)*(q-1);
-        int e = 3;
-        float dTemp = 1; // arbitrary such that its not an int also math class is weird and wont round doubles to ints
-        int z = 0;
+        int e = 17;
+        float dTemp = 1; // arbitrary such that its not an int also math class is weird and won't round doubles to ints
+        float z = 0;
         int d = 0;
         while( Math.abs((dTemp - d)) > .00001)//check if dTemp is an int
         {
