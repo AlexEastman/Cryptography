@@ -19,10 +19,10 @@ public class Hacker
         
     }
     
-    public void setPublicKey(int key)
+    public void setPublicKey(int key, Encrypter encrypt)
     {
         publicKey = key;
-        //encrypt = new Encrypter(key);
+        this.encrypt = encrypt;
     }
 
 }

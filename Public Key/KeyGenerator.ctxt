@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.params=
 comment0.target=KeyGenerator()
-comment1.params=seed
-comment1.target=int[][]\ generateKeys(int)
+comment1.params=pq
+comment1.target=int[][]\ generateKeys(int[])
 numComments=2

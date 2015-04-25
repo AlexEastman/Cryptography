@@ -4,7 +4,7 @@ public class Client
     /** description of instance variable x (add comment for each instance variable) */
     private Encrypter encrypt;
     private String message;
-    private int publicKey;
+    private int[] publicKey;
     
     
     public Client()
@@ -12,10 +12,10 @@ public class Client
         
     }
     
-    public void setPublicKey(int key)
+    public void setPublicKey(int[] key, Encrypter encrypt)
     {
         publicKey = key;
-        //encrypt = new Encrypter(key);
+        this.encrypt = encrypt;
     }
 
     public void makeNewMessage()

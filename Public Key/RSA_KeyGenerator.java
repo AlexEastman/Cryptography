@@ -1,22 +1,10 @@
-import java.math.BigInteger;
+
 public class RSA_KeyGenerator extends KeyGenerator
 {
-    public int[][] generateKeys(int seed)
+    public int[][] generateKeys(int[] pq)
     {
-        int p = seed;
-        int q = seed;
-        p+=(seed%2)+1;
-        q-=(seed%2)+1;
-        
-        while(!checkPrime(p))
-        {
-            p+=2;
-        }
-        
-        while(!checkPrime(q))
-        {
-            q-=2;
-        }
+        int p = pq[0];
+        int q = pq[1];
         int n = p*q;
         int t = (p-1)*(q-1);
         int e = 17;
@@ -34,21 +22,5 @@ public class RSA_KeyGenerator extends KeyGenerator
         int[] privateKey = {n,d};
         int[][] keys = {publicKey,privateKey};
         return keys;
-        
     }
-    
-    private boolean checkPrime(int n) //simple helper method to check for primality
-    {
-        int rootN = (int)Math.pow(n,.5);
-        for(int i = 3; i<rootN;i+=2) // iterates through odd numbers starting at 3 and up to N
-        {
-            if((n/i)*i==n) // checks if integer division was performed indicating not prime
-            {
-                return false;
-            }
-        }
-        return true;
-    }
-    
- 
 }

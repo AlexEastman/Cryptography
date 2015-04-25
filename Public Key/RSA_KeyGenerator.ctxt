@@ -1,6 +1,4 @@
 #BlueJ class context
-comment0.params=seed
-comment0.target=int[][]\ generateKeys(int)
-comment1.params=n
-comment1.target=boolean\ checkPrime(int)
-numComments=2
+comment0.params=pq
+comment0.target=int[][]\ generateKeys(int[])
+numComments=1

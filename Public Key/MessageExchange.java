@@ -15,7 +15,7 @@ public class MessageExchange
         Client client = new Client(); // the client
         Hacker hacker = new Hacker(); // and the hacker
         
-        int publicKey = server.getPublicKey();
+        int[] publicKey = server.getPublicKey();
         client.setPublicKey(publicKey);
         
         client.makeNewMessage();
