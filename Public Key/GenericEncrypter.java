@@ -1,9 +1,9 @@
 import java.math.BigInteger;
 /**
- * Write a description of class GenericEncrypter here.
+ * this generic encrypter will behave like a message system where nothing is encrypted
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author alex eastman
+ * @version 2
  */
 public class GenericEncrypter extends Encrypter
 {

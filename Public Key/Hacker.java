@@ -1,5 +1,11 @@
 import java.math.BigInteger;
 
+/**
+ *simulates a hacker in a message exchange
+ * 
+ * @author alex eastman 
+ * @version 1
+ */
 public class Hacker
 {
     /** description of instance variable x (add comment for each instance variable) */

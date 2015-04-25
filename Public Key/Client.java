@@ -1,5 +1,12 @@
 import java.math.BigInteger;
 import java.util.Scanner;
+
+/**
+ *simulates a client in a message exchange
+ * 
+ * @author alex eastman 
+ * @version 1
+ */
 public class Client
 {
     /** description of instance variable x (add comment for each instance variable) */

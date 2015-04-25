@@ -3,4 +3,5 @@ comment0.params=
 comment0.target=KeyGenerator()
 comment1.params=pq
 comment1.target=long[][]\ generateKeys(long[])
+comment1.text=\n\ generates\ public\ and\ private\ keys\ based\ of\ 2\ integers\ p\ and\ q\n\n\ @param\ \ pq\ \ \ p\ and\ q\ respectivly\n\ @return\ \ \ \ \ \n
 numComments=2

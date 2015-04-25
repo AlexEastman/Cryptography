@@ -1,10 +1,10 @@
 
 
 /**
- * Write a description of class GenericKeyGenerator here.
+ *generates 2 non functional keys
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author alex eastman 
+ * @version 1
  */
 public class GenericKeyGenerator extends KeyGenerator
 {

@@ -1,16 +1,23 @@
 #BlueJ class context
 comment0.params=seedSize
 comment0.target=Server(long)
+comment0.text=\n\ constructor\ that\ sets\ the\ seed\ size\ for\ the\ random\ key\ generated\n\n\ @param\ \ seedSize\ the\ number\ of\ bits\ in\ both\ of\ the\ factors\ of\ the\ public\ and\ private\ key\ modulus\n\ \n
 comment1.params=keygen
 comment1.target=void\ setKeyGenerator(KeyGenerator)
+comment1.text=\n\ sets\ the\ keyGenerator\ to\ an\ instance\ variable\n\n\ @param\ \ keygen\ \ \ \ the\ key\ generator\ object,\ this\ is\ just\ for\ a\ data\ type\ not\ an\ actual\ object\n\ @return\ \ \ \ \ void\n
 comment2.params=encrypt
 comment2.target=void\ setEncrypter(Encrypter)
+comment2.text=\n\ sets\ the\ encrypter\ object\n\n\ @param\ \ encrypt\ \ \ an\ encrypter\ object\n\ @return\ \ \ \ \ void\n
 comment3.params=seedSize
 comment3.target=long[]\ generatePQ(long)
+comment3.text=\n\ randomly\ generates\ 2\ primes\ that\ are\ near\ a\ given\ key\ length\ \n\n\ @param\ \ seedSize\ the\ lenght\ (in\ bits)\ of\ p\ and\ q\n\ @return\ \ \ \ p\ and\ q\ such\ that\ they\ are\ prime\ and\ have\ bit\ length\ seedSize\n
 comment4.params=
 comment4.target=long[]\ getPublicKey()
+comment4.text=\n\ simple\ accessor\ method\n\n\ @param\ \ void\n\ @return\ \ \ the\ public\ key\ of\ the\ server\n
 comment5.params=encryptedMessage
 comment5.target=void\ recieveMessage(java.math.BigInteger)
+comment5.text=\n\ A\ method\ that\ simulates\ recieving\ a\ message\ from\ a\ client\n\n\ @param\ \ encryptedMessage\ \ \ \ \ an\ encrypted\ message\ from\ the\ server\n\ @return\ \ \ \ \ void\n
 comment6.params=n
 comment6.target=boolean\ checkPrime(long)
+comment6.text=\n\ helper\ method\ for\ checking\ primality\ of\ a\ number\n\n\ @param\ n\ \ \ number\ to\ check\ primality\n\ @return\ \ whether\ or\ not\ it\ is\ prime\ \n
 numComments=7

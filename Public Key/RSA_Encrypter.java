@@ -1,9 +1,9 @@
 import java.math.BigInteger;
 /**
- * Write a description of class RSA_Encrypter here.
+ * encrypts and decrypts messages based on the RSA standard
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author alex eastman
+ * @version 1
  */
 public class RSA_Encrypter extends Encrypter
 {
@@ -17,12 +17,11 @@ public class RSA_Encrypter extends Encrypter
     }
 
     /**
-     * method written by Bruce Schneier
+     * adapted from psuedo-code written by Bruce Schneier
      *
-     * @pre     (m-1)^2 does not overflow , b,e, and m are all positive integers
-     * @post    will return c | c≡b^e(mod(m)) 
+     * @pre     (m-1)^2 does not overflow , b,e, and m are all positive integers   
      * @param   b: base of an exponent, e: exponent, m: modulus
-     * @return  description of the return value
+     * @return  will return c | c≡b^e(mod(m)) 
      */
     private long modular_pow(long b, long e, long m)
     {
@@ -53,7 +52,8 @@ public class RSA_Encrypter extends Encrypter
     {
         long modulus = getPublicKey()[0];
         long exponent = getPublicKey()[1];
-        return message.modPow(BigInteger.valueOf(exponent),BigInteger.valueOf(modulus)); 
+        return message.modPow(BigInteger.valueOf(exponent),BigInteger.valueOf(modulus)); // a mod pow 
+        //implementation is shown in the modular_power
     }
     
     public long[] getPrivateKey()
@@ -63,17 +63,31 @@ public class RSA_Encrypter extends Encrypter
         
         KeyGenerator keyGen = new RSA_KeyGenerator();
         long pq = getPublicKey()[0];
-        long p = (long) (Math.pow(pq,.5)); //start factoring about the sqrt. of pq and work our way down.
-        p += (p+1)%2; // ensure that p is odd if it is even add 1 so that it becomes odd
-        p+=2; // since our loop starts by subtracting 2 this accounts for first guess correct situations
-        double q = (double).5;
         
         
+        // this is too fast and isnt showing a big difference in time
+        //         long p = (long) (Math.pow(pq,.5)); //start factoring about the sqrt. of pq and work our way down.
+        //         p += (p+1)%2; // ensure that p is odd if it is even add 1 so that it becomes odd
+        //         p+=2; // since our loop starts by subtracting 2 this accounts for first guess correct situations
+        //         double q = (double).5;
+        //         
+        //         
+        //         while (Math.abs(q - Math.round(q))>.0000000001)
+        //         {
+        //             p-=2; // check next possible p down
+        //             q = ((double)pq)/p;
+        //         }
+
+        long p = 1;
+        double q = .5;
         while (Math.abs(q - Math.round(q))>.0000000001)
         {
-            p-=2; // check next possible p down
-            q = ((double)pq)/p;
+           p++; 
+           q = ((double)pq)/p;
         }
+
+
+
         long[] PQ = {p, Math.round(q)};
         return keyGen.generateKeys(PQ)[1];
         
@@ -81,17 +95,18 @@ public class RSA_Encrypter extends Encrypter
     
     public String decryptString(BigInteger message, long[] privateKey)
     {
-        BigInteger decrypt = decryptNumber(message,privateKey);
-        byte[] decryptedBytes = decrypt.toByteArray();
-        String decryptedMessage = new String(decryptedBytes);
-        return decryptedMessage;
+        BigInteger decrypt = decryptNumber(message,privateKey); // decryption of bigint
+        byte[] decryptedBytes = decrypt.toByteArray(); // convert decrypted value to byte array
+        String decryptedMessage = new String(decryptedBytes); // byte array to string
+        return decryptedMessage; 
     }
     
     public BigInteger decryptNumber(BigInteger message, long[] privateKey)
     {
         long modulus = privateKey[0];
         long exponent = privateKey[1];
-        return message.modPow(BigInteger.valueOf(exponent),BigInteger.valueOf(modulus)); 
+        return message.modPow(BigInteger.valueOf(exponent),BigInteger.valueOf(modulus)); // a mod pow 
+        //implementation is shown in the modular_power
     }
     
 }

@@ -1,5 +1,11 @@
 import java.math.BigInteger;
 
+/**
+ *simulates a server in a message exchange
+ * 
+ * @author alex eastman 
+ * @version 1
+ */
 public class Server
 {
     private long[] privateKey;

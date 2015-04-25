@@ -1,5 +1,7 @@
 import java.math.BigInteger;
 /**
+ * I bet you hoped this was a unit test
+ * 
  * this class shows hows byte conversion between bigint and strings may result in different bytes but still have the same value when reverse translated
  * 
  * @author alex
