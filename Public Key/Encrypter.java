@@ -2,30 +2,59 @@ import java.math.BigInteger;
 public abstract class Encrypter
 {
     
-    private int[] key; //public key
+    private long[] key; //public key
     
-    public Encrypter(int[] publicKey) // sets the public key of the encrypter
+    
+         /**
+    * constructor, sets the public key
+    *
+    * @param public key   the public key of the public key cryptosystem
+    * @return     the sum of x and y
+    */
+
+    public Encrypter(long[] publicKey) // sets the public key of the encrypter
     {
         key = publicKey;
     }
     
-    public abstract String encryptString(String message); //encrypts a string
+         /**
+    * takes a string and encrypts it as a BigInteger
+    *
+    * @param  message   a string message to be encrypted
+    * @return    a bigInteger representing the encrypted message
+    */
+
+    public abstract BigInteger encryptString(String message); //encrypts a string
        
+         /**
+    *  takes a big int and encrypts it
+    *  
+    * @param message   the number to be encrypted
+    * @return     a big integer representing the encrypted message
+    */
+
     public abstract BigInteger encryptNumber(BigInteger message); //encrypts an int
     
-    public abstract int[] getPrivateKey();//determines private key value
+         /**
+    * calculates private key based off public key
+    *
+    * 
+    * @return      private key based of public key
+    */
+
+    public abstract long[] getPrivateKey();//determines private key value
    
-    public String decryptString(String message) //calculates private key then decrypts
+    public String decryptString(BigInteger message) //calculates private key then decrypts
     {
         return decryptString(message,getPrivateKey());
     }
     
-    public int[] getPublicKey()
+    public long[] getPublicKey()
     {
         return key;
     }
        
-    public abstract String decryptString(String message, int[] privateKey); 
+    public abstract String decryptString(BigInteger message, long[] privateKey); 
     //decrypts based off given private key 
       
     public BigInteger decryptNumber(BigInteger message)
@@ -33,7 +62,7 @@ public abstract class Encrypter
         return decryptNumber(message, getPrivateKey());
     }
    
-    public abstract BigInteger decryptNumber(BigInteger message, int[] privateKey);
+    public abstract BigInteger decryptNumber(BigInteger message, long[] privateKey);
     
     
     

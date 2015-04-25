@@ -11,14 +11,16 @@ public class GenericEncrypter extends Encrypter
     /**
      * Default constructor for objects of class GenericEncrypter
      */
-    public GenericEncrypter(int[] publicKey)
+    public GenericEncrypter(long[] publicKey)
     {
         super(publicKey);
     }
   
-    public String encryptString(String message) //encrypts a string
+    public BigInteger encryptString(String message) //encrypts a string
     {
-        return message;
+        byte[] bytes = message.getBytes();
+        BigInteger integer = new BigInteger(bytes);
+        return integer;
     }
        
     public BigInteger encryptNumber( BigInteger message) //encrypts an int
@@ -26,14 +28,17 @@ public class GenericEncrypter extends Encrypter
         return message;
     }
     
-    public int[] getPrivateKey()//determines private key value
+    public long[] getPrivateKey()//determines private key value
     {
         return super.getPublicKey();
     }
    
-    public String decryptString(String message, int[] privateKey)
+    public String decryptString(BigInteger message, long[] privateKey)
     {
-        return message;
+        byte[] bytes2 = message.toByteArray();
+        
+        String message2 = new String(bytes2);
+        return message2;
     }
    
     public BigInteger decryptNumber(BigInteger message)
@@ -41,7 +46,7 @@ public class GenericEncrypter extends Encrypter
         return message;
     }
    
-    public BigInteger decryptNumber(BigInteger message, int[] privateKey)
+    public BigInteger decryptNumber(BigInteger message, long[] privateKey)
     {
         return message;
     }

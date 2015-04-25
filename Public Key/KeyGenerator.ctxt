@@ -2,5 +2,5 @@
 comment0.params=
 comment0.target=KeyGenerator()
 comment1.params=pq
-comment1.target=int[][]\ generateKeys(int[])
+comment1.target=long[][]\ generateKeys(long[])
 numComments=2

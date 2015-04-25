@@ -1,10 +1,16 @@
 #BlueJ class context
 comment0.params=seedSize
-comment0.target=Server(int)
-comment1.params=seedSize
-comment1.target=int\ makeRandomSeed(int)
-comment2.params=
-comment2.target=int\ getPublicKey()
-comment3.params=encryptedMessage
-comment3.target=void\ recieveMessage(java.lang.String)
-numComments=4
+comment0.target=Server(long)
+comment1.params=keygen
+comment1.target=void\ setKeyGenerator(KeyGenerator)
+comment2.params=encrypt
+comment2.target=void\ setEncrypter(Encrypter)
+comment3.params=seedSize
+comment3.target=long[]\ generatePQ(long)
+comment4.params=
+comment4.target=long[]\ getPublicKey()
+comment5.params=encryptedMessage
+comment5.target=void\ recieveMessage(java.math.BigInteger)
+comment6.params=n
+comment6.target=boolean\ checkPrime(long)
+numComments=7

@@ -7,7 +7,7 @@ public abstract class KeyGenerator
         
     }
     
-    public abstract int[][] generateKeys(int[] pq);
+    public abstract long[][] generateKeys(long[] pq);
     
     
        

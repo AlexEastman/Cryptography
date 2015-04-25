@@ -14,9 +14,9 @@ public class GenericKeyGenerator extends KeyGenerator
         
     }
 
-    public int[][] generateKeys(int[] pq)
+    public long[][] generateKeys(long[] pq)
     {
-        int[][] keys = {{pq[0]},{pq[1]}};
+        long[][] keys = {{pq[0]},{pq[1]}};
         return keys;
     }
     

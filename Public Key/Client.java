@@ -1,22 +1,35 @@
+import java.math.BigInteger;
 import java.util.Scanner;
 public class Client
 {
     /** description of instance variable x (add comment for each instance variable) */
     private Encrypter encrypt;
     private String message;
-    private int[] publicKey;
     
+     
     
     public Client()
     {
         
     }
     
-    public void setPublicKey(int[] key, Encrypter encrypt)
+     /**
+    * sets the encrypter object, that contains the public key, to an instance variable
+    * 
+    * @param  the encrypter object made in the message exchange class
+    * @return     void
+    */
+    public void setEncrypter( Encrypter encrypt)
     {
-        publicKey = key;
         this.encrypt = encrypt;
     }
+
+    /**
+    * prompts the user for a message to be encrypted
+    *
+    * @param  void
+    * @return     void
+    */
 
     public void makeNewMessage()
     {
@@ -25,9 +38,18 @@ public class Client
         message = in.next();
     }
     
-    public String getEncryptedMessage()
+         /**
+    * encrypts the message 
+    *
+    * @pre makeNewMessage() has been called, setEncrypter() has been called
+    * @return     a message encrypted based off the public key in the encrypter object
+    */
+
+    public BigInteger getEncryptedMessage()
     {
         return encrypt.encryptString(message);
     }
 
 }
+
+  

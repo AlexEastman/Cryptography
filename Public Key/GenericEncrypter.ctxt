@@ -1,17 +1,17 @@
 #BlueJ class context
 comment0.params=publicKey
-comment0.target=GenericEncrypter(int[])
+comment0.target=GenericEncrypter(long[])
 comment0.text=\n\ Default\ constructor\ for\ objects\ of\ class\ GenericEncrypter\n
 comment1.params=message
-comment1.target=java.lang.String\ encryptString(java.lang.String)
+comment1.target=java.math.BigInteger\ encryptString(java.lang.String)
 comment2.params=message
 comment2.target=java.math.BigInteger\ encryptNumber(java.math.BigInteger)
 comment3.params=
-comment3.target=int[]\ getPrivateKey()
+comment3.target=long[]\ getPrivateKey()
 comment4.params=message\ privateKey
-comment4.target=java.lang.String\ decryptString(java.lang.String,\ int[])
+comment4.target=java.lang.String\ decryptString(java.math.BigInteger,\ long[])
 comment5.params=message
 comment5.target=java.math.BigInteger\ decryptNumber(java.math.BigInteger)
 comment6.params=message\ privateKey
-comment6.target=java.math.BigInteger\ decryptNumber(java.math.BigInteger,\ int[])
+comment6.target=java.math.BigInteger\ decryptNumber(java.math.BigInteger,\ long[])
 numComments=7

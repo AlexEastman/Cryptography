@@ -1,20 +1,20 @@
 #BlueJ class context
 comment0.params=publicKey
-comment0.target=Encrypter(int[])
+comment0.target=Encrypter(long[])
 comment1.params=message
-comment1.target=java.lang.String\ encryptString(java.lang.String)
+comment1.target=java.math.BigInteger\ encryptString(java.lang.String)
 comment2.params=message
 comment2.target=java.math.BigInteger\ encryptNumber(java.math.BigInteger)
 comment3.params=
-comment3.target=int[]\ getPrivateKey()
+comment3.target=long[]\ getPrivateKey()
 comment4.params=message
-comment4.target=java.lang.String\ decryptString(java.lang.String)
+comment4.target=java.lang.String\ decryptString(java.math.BigInteger)
 comment5.params=
-comment5.target=int[]\ getPublicKey()
+comment5.target=long[]\ getPublicKey()
 comment6.params=message\ privateKey
-comment6.target=java.lang.String\ decryptString(java.lang.String,\ int[])
+comment6.target=java.lang.String\ decryptString(java.math.BigInteger,\ long[])
 comment7.params=message
 comment7.target=java.math.BigInteger\ decryptNumber(java.math.BigInteger)
 comment8.params=message\ privateKey
-comment8.target=java.math.BigInteger\ decryptNumber(java.math.BigInteger,\ int[])
+comment8.target=java.math.BigInteger\ decryptNumber(java.math.BigInteger,\ long[])
 numComments=9

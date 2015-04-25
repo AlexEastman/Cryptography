@@ -11,7 +11,7 @@ public class RSA_Encrypter extends Encrypter
     /**
      * Default constructor for objects of class RSA_Encrypter
      */
-    public RSA_Encrypter(int[] publicKey)
+    public RSA_Encrypter(long[] publicKey)
     {
         super(publicKey);
     }
@@ -24,9 +24,9 @@ public class RSA_Encrypter extends Encrypter
      * @param   b: base of an exponent, e: exponent, m: modulus
      * @return  description of the return value
      */
-    private int modular_pow(int b, int e, int m)
+    private long modular_pow(long b, long e, long m)
     {
-        int result = 1;
+        long result = 1;
         b = (b%m);
         while (e>0)
         {
@@ -41,14 +41,12 @@ public class RSA_Encrypter extends Encrypter
         return result;
     }
 
-    public String encryptString(String message)
+    public BigInteger encryptString(String message)
     {
         byte[] bytes = message.getBytes();
         BigInteger integer = new BigInteger(bytes);
         BigInteger encrypt = encryptNumber(integer);
-        byte [] encryptedBytes = encrypt.toByteArray();
-        String encryptedMessage = new String(encryptedBytes);
-        return encryptedMessage;
+        return encrypt;
     }
 
     public BigInteger encryptNumber(BigInteger message)
@@ -58,40 +56,38 @@ public class RSA_Encrypter extends Encrypter
         return message.modPow(BigInteger.valueOf(exponent),BigInteger.valueOf(modulus)); 
     }
     
-    public int[] getPrivateKey()
+    public long[] getPrivateKey()
     {
         // first make a key gen object then write a method to factor pq into p and q
         // given pq find p and q then call generate keys function on the keygenerator object you created:)
         
         KeyGenerator keyGen = new RSA_KeyGenerator();
-        int pq = getPublicKey()[0];
-        int p = (int) (Math.pow(pq,.5)); //start factoring about the sqrt. of pq and work our way down.
+        long pq = getPublicKey()[0];
+        long p = (long) (Math.pow(pq,.5)); //start factoring about the sqrt. of pq and work our way down.
         p += (p+1)%2; // ensure that p is odd if it is even add 1 so that it becomes odd
         p+=2; // since our loop starts by subtracting 2 this accounts for first guess correct situations
-        float q = (float).5;
+        double q = (double).5;
         
         
         while (Math.abs(q - Math.round(q))>.0000000001)
         {
             p-=2; // check next possible p down
-            q = ((float)pq)/p;
+            q = ((double)pq)/p;
         }
-        int[] PQ = {p, Math.round(q)};
+        long[] PQ = {p, Math.round(q)};
         return keyGen.generateKeys(PQ)[1];
         
     }
     
-    public String decryptString(String message, int[] privateKey)
+    public String decryptString(BigInteger message, long[] privateKey)
     {
-        byte[] bytes = message.getBytes();
-        BigInteger integer = new BigInteger(bytes);
-        BigInteger decrypt = decryptNumber(integer,privateKey);
+        BigInteger decrypt = decryptNumber(message,privateKey);
         byte[] decryptedBytes = decrypt.toByteArray();
         String decryptedMessage = new String(decryptedBytes);
         return decryptedMessage;
     }
     
-    public BigInteger decryptNumber(BigInteger message, int[] privateKey)
+    public BigInteger decryptNumber(BigInteger message, long[] privateKey)
     {
         long modulus = privateKey[0];
         long exponent = privateKey[1];

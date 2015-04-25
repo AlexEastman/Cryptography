@@ -1,4 +1,4 @@
 #BlueJ class context
 comment0.params=pq
-comment0.target=int[][]\ generateKeys(int[])
+comment0.target=long[][]\ generateKeys(long[])
 numComments=1

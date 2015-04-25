@@ -1,9 +1,9 @@
-
+import java.math.BigInteger;
 
 public class Hacker
 {
     /** description of instance variable x (add comment for each instance variable) */
-    private int publicKey;
+   
     private Encrypter encrypt;
     
     public Hacker()
@@ -11,7 +11,15 @@ public class Hacker
         
     }
 
-    public void recieveMessage(String encryptedMessage)
+    
+         /**
+    * simulates a hacker intercepting a message from a server
+    *
+    * @param  encryptedMessage      the message the hacker wishes to crack
+    * @return     void
+    */
+
+    public void recieveMessage(BigInteger encryptedMessage)
     {
         System.out.println("beggining hacker decryption");
         String message = encrypt.decryptString(encryptedMessage);
@@ -19,10 +27,16 @@ public class Hacker
         
     }
     
-    public void setPublicKey(int key, Encrypter encrypt)
+         /**
+    * sets an encrypter to an instance variable
+    *
+    * @param  encrypt      the encrypter to set
+    */
+
+    public void setEncrypter( Encrypter encrypt)
     {
-        publicKey = key;
         this.encrypt = encrypt;
     }
 
 }
+ 
